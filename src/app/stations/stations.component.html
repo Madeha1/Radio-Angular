@@ -1,0 +1,19 @@
+<style>
+    button {
+        margin: 10px;
+    }
+    
+    body {
+        margin: 20px;
+    }
+</style>
+
+<body>
+    <h4 *ngIf="country">{{country}} stations</h4>
+    <div *ngFor='let cs of countryStations'>
+        <div *ngIf="cs.Name==country">
+            <button *ngFor="let station of cs.Stations" (click)='play(station.url)' class="btn btn-primary">{{station.name}}</button>
+        </div>
+    </div>
+    <audio controls autoplay [src]='source' type="audio/mpeg"></audio>
+</body>

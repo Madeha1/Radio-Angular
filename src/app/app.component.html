@@ -1,0 +1,7 @@
+<style>
+    button {
+        margin: 10px;
+    }
+</style>
+<button *ngFor='let country of countries' (click)='choosenCountry = country' class="btn btn-secondary">{{country}}</button>
+<app-stations [country]='choosenCountry'></app-stations>

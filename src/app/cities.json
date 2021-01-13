@@ -20,11 +20,11 @@
     },
     {
         "Name": "Ramallah",
-        "Stations": ["r1", "r2"]
+        "Stations": []
     },
     {
         "Name": "Tulkarm",
-        "Stations": ["r1", "r2"]
+        "Stations": []
     },
     {
         "Name": "Jenin",

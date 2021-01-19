@@ -3,5 +3,6 @@
         margin: 10px;
     }
 </style>
-<button *ngFor='let country of countries' (click)='choosenCountry = country' class="btn btn-secondary">{{country}}</button>
-<app-stations [country]='choosenCountry'></app-stations>
+<h1>{{title}}</h1>
+<button *ngFor='let city of cities' (click)='choosenCity = city.Name' class="btn btn-secondary">{{city.Name}}</button>
+<app-stations [city]='choosenCity'></app-stations>

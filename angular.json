@@ -121,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "radio"
+  "defaultProject": "radio",
+  "cli": {
+    "analytics": false
+  }
 }

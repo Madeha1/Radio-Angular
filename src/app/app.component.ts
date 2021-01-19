@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ConfigService} from '../app/config.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,13 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'radio';
-  country = '';
-  choosenCountry :string;
+  city = '';
+  choosenCity :string;
 
-  countries=[
-    'Hebron',
-    'Nablus',
-    'Ramallah',
-    'Jenin'
-  ]
+  cities: any;
+
+  constructor(private data : ConfigService){} 
+  
+  ngOnInit(): void {
+    this.data.getCities().subscribe(d => {
+      this.cities = d;
+    });
+  }
 }

@@ -1,19 +1,11 @@
-<style>
-    button {
-        margin: 10px;
-    }
-    
-    body {
-        margin: 20px;
-    }
-</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
+    <i (click)="changePlay()" [ngClass]="{'fa fa-pause' : !playStatus, 'fa fa-play': playStatus}"></i>
     <h4 *ngIf="city">{{city}} stations</h4>
     <div *ngFor='let cs of cityStations'>
         <div *ngIf="cs.Name==city">
             <button *ngFor="let station of cs.Stations" (click)='play(station.url)' class="btn btn-primary">{{station.name}}</button>
         </div>
     </div>
-    <audio controls autoplay [src]='source' type="audio/mpeg"></audio>
 </body>

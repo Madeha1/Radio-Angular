@@ -1,8 +1,9 @@
-<style>
-    button {
-        margin: 10px;
-    }
-</style>
-<h1>{{title}}</h1>
-<button *ngFor='let city of cities' (click)='choosenCity = city.Name' class="btn btn-secondary">{{city.Name}}</button>
-<app-stations [city]='choosenCity'></app-stations>
+<div [ngClass]="{'center': !isMobileResolution}">
+    <div [ngClass]="{'mobile' : !isMobileResolution, disktop: isMobileResolution}">
+        <select [(ngModel)]='choosenCity' name='cities'>
+            <option value='none' selected disabled hidden>Choose a city</option>
+            <option *ngFor='let city of cities' value='{{city.Name}}'>{{city.Name}}</option>
+        </select>
+        <app-stations [city]='choosenCity'></app-stations>
+    </div>
+</div>

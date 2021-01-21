@@ -11,6 +11,7 @@ export class StationsComponent implements OnInit {
   @Input() city :string = "";
   source :string = "";
   cityStations: any;
+  playStatus :boolean = true;
   constructor(private data : ConfigService) { }
 
   ngOnInit(): void {
@@ -18,9 +19,11 @@ export class StationsComponent implements OnInit {
       this.cityStations = d;
     });
   }
-
-
   play(station:string){
     this.source = station;
+  }
+  
+  changePlay(){
+    this.playStatus = !this.playStatus;
   }
 }

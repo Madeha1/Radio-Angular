@@ -13,14 +13,32 @@
     {
         "Name": "Nablus",
         "Stations": [{
-            "name": "quran-radio",
-            "url": "http://www.quran-radio.org:8002/;stream.mp3&13202692901&duration=99999&id=scplayer&autostart=true"
-        }]
+                "name": "quran-radio",
+                "url": "http://www.quran-radio.org:8002/;stream.mp3&13202692901&duration=99999&id=scplayer&autostart=true"
+            },
+            {
+                "name": "Alnajah",
+                "url": "http://rs.hadara.ps:8550/stream/;stream.mp3&13202692901&duration=99999&id=scplayer&autostart=true"
+            },
+            {
+                "name": "Shabab FM",
+                "url": "https://streaming.zaytonatube.com/test2.aac"
+            }
+        ]
 
     },
     {
         "Name": "Ramallah",
-        "Stations": []
+        "Stations": [{
+                "name": "Ajial",
+                "url": "http://streamer.mada.ps:8008/AJYALs"
+            },
+            {
+                "name": "Alborj",
+                "url": "http://82.213.26.67:8000/;stream.mp3&13202692901&duration=99999&id=scplayer&autostart=trues"
+            }
+        ]
+
     },
     {
         "Name": "Tulkarm",
@@ -31,6 +49,13 @@
         "Stations": [{
             "name": "albalad",
             "url": "http://live.masterweb-ps.com:8006/;mp3"
+        }]
+    },
+    {
+        "Name": "jerusalem",
+        "Stations": [{
+            "name": "Yaboos",
+            "url": "http://188.225.182.10:8000/live"
         }]
     }
 ]

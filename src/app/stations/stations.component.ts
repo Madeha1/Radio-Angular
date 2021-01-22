@@ -8,22 +8,35 @@ import {ConfigService} from '../../app/config.service';
   styleUrls: ['./stations.component.css']
 })
 export class StationsComponent implements OnInit {
-  @Input() city :string = "";
-  source :string = "";
-  cityStations: any;
-  playStatus :boolean = true;
-  constructor(private data : ConfigService) { }
+  @Input() cityStations :string = "";
+  @Input() cityName :string = "";
 
-  ngOnInit(): void {
-    this.data.getCities().subscribe(d => {
-      this.cityStations = d;
-    });
-  }
+  source :string = "";
+  playStatus :boolean = false;
+  audio = new Audio();
+  constructor(private data : ConfigService) {   }
+
+  ngOnInit(): void {  }
+
   play(station:string){
     this.source = station;
+    this.audio.pause();
+    this.playStatus = false;
   }
-  
-  changePlay(){
+
+  playAudio(){
+    if(this.source == ''){
+      window.alert('Please choose a station to play');
+      return;
+    }
     this.playStatus = !this.playStatus;
+    if(this.playStatus){
+      this.audio.src = this.source;
+      this.audio.load();
+      this.audio.play();
+    } else {
+      this.audio.pause();
+      this.audio.src = "";
+    }   
   }
 }

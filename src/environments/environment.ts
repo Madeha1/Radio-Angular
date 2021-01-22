@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  url: "http://www.json-generator.com/api/json/get/bUMGfBACdK?indent=2"
+  url: "http://www.json-generator.com/api/json/get/bZFTedviYy?indent=2"
 };

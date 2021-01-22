@@ -1,11 +1,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<body>
-    <i (click)="changePlay()" [ngClass]="{'fa fa-pause' : !playStatus, 'fa fa-play': playStatus}"></i>
-    <h4 *ngIf="city">{{city}} stations</h4>
-    <div *ngFor='let cs of cityStations'>
-        <div *ngIf="cs.Name==city">
-            <button *ngFor="let station of cs.Stations" (click)='play(station.url)' class="btn btn-primary">{{station.name}}</button>
-        </div>
-    </div>
-</body>
+<div class="mobile-content">
+    <i (click)=" playAudio() " class="fa" [ngClass]='{ "fa-pause": playStatus, "fa-play": !playStatus}'></i>
+</div>
+<div class="stations">
+    <h4 *ngIf="cityName">{{cityName}} stations</h4>
+    <button class="s-names" *ngFor="let cs of cityStations" (click)="play(cs.url)" class="btn btn-primary ">{{cs.name}}</button>
+</div>

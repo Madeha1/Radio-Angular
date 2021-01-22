@@ -1,9 +1,9 @@
-<div [ngClass]="{'center': !isMobileResolution}">
-    <div [ngClass]="{'mobile' : !isMobileResolution, disktop: isMobileResolution}">
-        <select [(ngModel)]='choosenCity' name='cities'>
-            <option value='none' selected disabled hidden>Choose a city</option>
+<div class="main-contant">
+    <div>
+        <select (change)="onChange($event)" name='cities'>
+            <option value='none' selected disabled hidden>Select a city</option>
             <option *ngFor='let city of cities' value='{{city.Name}}'>{{city.Name}}</option>
         </select>
-        <app-stations [city]='choosenCity'></app-stations>
+        <app-stations [cityStations]='selectedStations' [cityName]="selectedCity"></app-stations>
     </div>
 </div>

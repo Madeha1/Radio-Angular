@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {ConfigService} from '../app/config.service';
-import {AppStateService} from '../app/app-state.service';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +9,24 @@ import {AppStateService} from '../app/app-state.service';
 export class AppComponent {
   title = 'radio';
   city = '';
-  choosenCity :string;
+  selectedStations :any;
+  selectedCity:string
   isMobileResolution : boolean
   cities: any;
 
-  constructor(private data : ConfigService , private mobile : AppStateService){} 
+  constructor(private dataService : ConfigService){} 
   
   ngOnInit(): void {
-    this.data.getCities().subscribe(d => {
+    this.dataService.getCities().subscribe(d => {
       this.cities = d;
     });
-    this.isMobileResolution = this.mobile.getIsMobileResolution();
   }
-
+  onChange(event:any) {
+    this.selectedCity = event.target.value;
+    for(let i=0; i<this.cities.length ;i++){
+      if(this.cities[i].Name === event.target.value) {
+        this.selectedStations = this.cities[i]['Stations'];
+      }
+    }
+  }
 }

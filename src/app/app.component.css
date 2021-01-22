@@ -1,19 +1,47 @@
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    box-sizing: border-box;
+@media only screen and (min-width: 1200px) {
+    .main-contant {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../assets/img/radio.jpg);
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .main-contant div {
+        padding: 20px;
+        width: 27vw;
+        height: 85vh;
+        border: 2px solid gray;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px black;
+        background-color: rgba(255, 255, 255, 0.589);
+        overflow-y: scroll;
+    }
+    .main-contant * {
+        background-color: rgba(255, 255, 255, 0.589);
+    }
 }
 
-.mobile {
-    border: 3px solid;
-    border-radius: 10px;
-    padding: 20px;
-    height: 70%;
-    overflow: auto;
+@media only screen and (max-width: 1200px) {
+    .main-contant {
+        height: 100vh;
+        width: 100vw;
+        background-image: url(../assets/img/radio.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 80%;
+        background-position: center center;
+        overflow: hidden;
+    }
+    .main-contant div {
+        padding: 30px;
+    }
 }
 
-.disktop {
-    padding: 20px;
+select {
+    margin-bottom: 10px;
+    padding: 2px;
 }
